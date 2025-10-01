@@ -1,0 +1,51 @@
+<!DOCTYPE html> <!-- Menentukan dokumen ini menggunakan standar HTML5 -->
+<html lang="id"> <!-- Tag utama HTML, atribut lang="id" menandakan bahasa Indonesia -->
+<head>
+  <meta charset="UTF-8"> <!-- Set karakter encoding agar teks bisa tampil dengan benar -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Supaya tampilan responsif di mobile -->
+  <title>Register - Toko Online</title> <!-- Judul halaman di tab browser -->
+  <link rel="stylesheet" href="style.css"> <!-- Memanggil file CSS eksternal -->
+</head>
+<body>
+  <!-- Container untuk form registrasi -->
+  <div class="form-container">
+    <h2>Register</h2> <!-- Judul form -->
+
+    <!-- Form registrasi -->
+    <form id="registerForm">
+      <input type="text" id="nama" placeholder="Nama Lengkap" required> <!-- Input nama lengkap -->
+      <input type="email" id="email" placeholder="Email" required> <!-- Input email -->
+      <input type="password" id="password" placeholder="Password" required> <!-- Input password -->
+      <button type="submit">Daftar</button> <!-- Tombol submit untuk daftar -->
+    </form>
+
+    <!-- Jika user sudah punya akun, diarahkan ke halaman login -->
+    <p>Sudah punya akun? <a href="login.html">Login</a></p>
+  </div>
+
+  <!-- Bagian JavaScript -->
+  <script>
+    // Menangkap event submit dari form dengan id "registerForm"
+    document.getElementById("registerForm").addEventListener("submit", function(e){
+      e.preventDefault(); // Mencegah halaman reload
+
+      // Ambil nilai dari input form dan hapus spasi berlebih
+      const nama = document.getElementById("nama").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      // Buat objek akun baru
+      const akun = {nama, email, password};
+
+      // Simpan akun ke localStorage (seperti database sederhana di browser)
+      localStorage.setItem("akun", JSON.stringify(akun));
+
+      // Tampilkan pesan berhasil
+      alert("Registrasi berhasil! Silakan login.");
+
+      // Arahkan ke halaman login
+      window.location.href = "login.html";
+    });
+  </script>
+</body>
+</html>

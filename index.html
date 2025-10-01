@@ -1,0 +1,245 @@
+<!DOCTYPE html> <!-- Mendeklarasikan bahwa dokumen ini menggunakan HTML5 -->
+<html lang="en"> <!-- Tag utama pembungkus HTML, atribut lang="en" artinya bahasa Inggris -->
+
+<head> <!-- Bagian kepala (informasi tentang dokumen, bukan konten utama) -->
+    <meta charset="UTF-8"> <!-- Mendefinisikan encoding karakter agar mendukung simbol/teks global -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Membuat tampilan web responsif di HP & laptop -->
+    <title>Toko Online Sederhana</title> <!-- Judul halaman yang tampil di tab browser -->
+    <link rel="stylesheet" href="style.css"> <!-- Menghubungkan file CSS eksternal untuk styling -->
+</head>
+
+<body> <!-- Awal dari konten utama yang akan tampil di browser -->
+
+    <!-- HEADER DAN NAVIGASI -->
+    <header> <!-- Bagian kepala halaman, biasanya berisi logo, menu navigasi -->
+        <h1>Rpl Store</h1> <!-- Judul utama toko -->
+
+        <nav> <!-- Elemen untuk menu navigasi -->
+            <ul id="menu"> <!-- Daftar menu dengan id "menu" -->
+                <li><a href="#banner">Beranda</a></li> <!-- Link menuju ke bagian banner -->
+                <li><a href="#produk">Produk</a></li> <!-- Link menuju ke bagian produk -->
+                <li><a href="#keranjang">Keranjang</a></li> <!-- Link menuju ke keranjang -->
+                <li><a href="#checkout">Checkout</a></li> <!-- Link menuju ke checkout -->
+                <li><a href="#kontak">Kontak</a></li> <!-- Link menuju ke kontak -->
+                <li id="tentangMenu"><a href="tentang.html">Tentang Kami</a></li> <!-- Link menuju halaman tentang kami -->
+                <li id="loginMenu"><a href="login.html">Login</a></li> <!-- Menu login -->
+                <li id="registerMenu"><a href="register.html">Register</a></li> <!-- Menu register -->
+            </ul>
+        </nav>
+
+        <form> <!-- Form pencarian produk -->
+            <input type="text" placeholder="Cari Produk...."> <!-- Kotak input teks untuk pencarian -->
+            <button type="submit">Cari</button> <!-- Tombol untuk submit pencarian -->
+        </form>
+    </header>
+    <!-- END HEADER DAN NAVIGASI -->
+
+    <!-- BANNER -->
+    <section id="banner"> <!-- Bagian banner utama dengan id "banner" -->
+        <img src="image/rpl sekoci.jpg" width="350" height="350" style="border-radius: 50%;"/> <!-- Gambar banner/logo toko dengan ukuran 350px dan dibuat bulat -->
+        
+        <div class="kolom"> <!-- Kontainer teks promosi -->
+            <p class="deskripsi">Selamat Datang di RPL SEKOCI Store</p> <!-- Teks deskripsi -->
+            <h2>Temukan produk terbaik untuk kebutuhan anda</h2> <!-- Judul promosi -->
+            <p>Dapatkan diskon hingga 50% untuk produk pilihan.</p> <!-- Info diskon -->
+            <p><a href="video/vidio.mp4" class="tbl-pink">Pelajari Lebih Lanjut Tentang Kami</a></p> <!-- Tombol link ke video -->
+        </div>
+    </section>
+    <!-- END BANNER -->
+
+    <!-- PRODUK -->
+    <section id="produk"> <!-- Bagian daftar produk dengan id "produk" -->
+        <h2>Produk Kami</h2> <!-- Judul bagian produk -->
+
+        <div class="produk-item"> <!-- Kotak produk pertama -->
+            <img src="https://www.power-x.in/cdn/shop/files/litetouch-u100-wired-mousepowerx-the-technology-people-254480.jpg?v=1739959779&width=3000" alt="Produk 1" height="150px" width="150px"> <!-- Gambar produk (src kosong untuk contoh) -->
+            <h3>Mouse</h3> <!-- Nama produk -->
+            <p>Rp 50.000</p> <!-- Harga produk -->
+            <button class="tambah-keranjang">Tambah Keranjang</button> <!-- Tombol untuk tambah ke keranjang -->
+        </div>
+
+        <div class="produk-item"> <!-- Kotak produk kedua -->
+            <img src="https://dorangadget.com/wp-content/uploads/2021/11/Router-TP-LINK-WR844N-4.jpg" alt="Produk 2" height="150px" width="150px"> <!-- Gambar produk kedua -->
+            <h3>TP-Link</h3> <!-- Nama produk -->
+            <p>Rp 100.000</p> <!-- Harga produk -->
+            <button class="tambah-keranjang">Tambah Keranjang</button> <!-- Tombol tambah keranjang -->
+        </div>
+    </section>
+    <!-- END PRODUK -->
+
+    <!-- Tombol lihat katalog -->
+    <div style="text-align:center; margin-top:30px;"> <!-- Div untuk tombol katalog dengan teks rata tengah -->
+        <a href="image/brosur1.png" class="tbl-biru">Lihat Katalog Lengkap</a> <!-- Link menuju katalog berupa gambar -->
+    </div>
+    <!-- END Tombol katalog -->
+
+    <!-- KERANJANG -->
+    <section id="keranjang"> <!-- Bagian keranjang belanja -->
+        <h2>Keranjang Belanja</h2> <!-- Judul keranjang -->
+        <table> <!-- Tabel daftar belanja -->
+            <thead> <!-- Bagian kepala tabel -->
+                <tr>
+                    <th>Produk</th> <!-- Kolom nama produk -->
+                    <th>Jumlah</th> <!-- Kolom jumlah -->
+                    <th>Harga</th> <!-- Kolom harga -->
+                    <th>Total</th> <!-- Kolom total harga -->
+                    <th>Aksi</th> <!-- Kolom aksi (hapus item) -->
+                </tr>
+            </thead>
+            <tbody id="daftar-keranjang"></tbody> <!-- Isi tabel keranjang akan dibuat dengan JavaScript -->
+        </table>
+        <p>Total Belanja: Rp <span id="total-belanja">0</span></p> <!-- Menampilkan total harga belanja -->
+    </section>
+    <!-- END KERANJANG -->
+
+    <!-- CHECKOUT -->
+    <section id="checkout"> <!-- Bagian checkout -->
+        <h2>Checkout</h2> <!-- Judul checkout -->
+        <form onsubmit="kirimWhatsapp(event)"> <!-- Form checkout, saat submit jalankan fungsi kirimWhatsapp -->
+            <input type="text" id="nama" placeholder="Nama Lengkap" required> <!-- Input nama -->
+            <input type="text" id="alamat" placeholder="Alamat Lengkap" required> <!-- Input alamat -->
+            <input type="text" id="hp" placeholder="No HP" required> <!-- Input nomor HP -->
+            <button type="submit">Pesan Sekarang</button> <!-- Tombol untuk memesan -->
+        </form>
+    </section>
+    <!-- END CHECKOUT -->
+
+    <!-- KONTAK -->
+    <section id="Kontak"> <!-- Bagian kontak toko -->
+        <h2>Kontak Kami</h2> <!-- Judul kontak -->
+        <p>Email : rplsekoci@gmail.com</p> <!-- Email toko -->
+        <p>Whatsapp : 0812-xxxx-xxxx</p> <!-- Nomor WhatsApp toko -->
+    </section>
+    <!-- END KONTAK -->
+
+    <!-- NOTIFIKASI -->
+    <div id="toast"></div> <!-- Div kosong untuk notifikasi pesan -->
+    <!-- END NOTIFIKASI -->
+
+    <!-- Footer -->
+    <footer> <!-- Bagian footer -->
+        <p>&copy; 2025 Rpl Sekoci. All Rights Reserved.</p> <!-- Hak cipta -->
+    </footer>
+    <!-- END Footer -->
+
+<!-- CODE JAVASCRIPT -->
+<script>
+// =======================
+// FUNGSI kirim data checkout ke WhatsApp
+// =======================
+function kirimWhatsapp(e){
+    e.preventDefault(); // Mencegah form reload saat submit
+    let nama = document.getElementById("nama").value; // Ambil nilai input nama
+    let alamat = document.getElementById("alamat").value; // Ambil nilai input alamat
+    let hp = document.getElementById("hp").value; // Ambil nilai input hp
+
+    // Buat isi pesan WhatsApp
+    let pesan = `Halo, saya ${nama}, ingin pesan. Alamat: ${alamat}, Nomor HP: ${hp}`;
+
+    // Buka link WhatsApp dengan isi pesan
+    window.open("https://wa.me/6281222927600?text=" + encodeURIComponent(pesan), "_blank");
+
+    // Tampilkan toast notifikasi berhasil
+    showToast("Pesanan berhasil dikirim ke WhatsApp!");
+}
+
+// =======================
+// CEK LOGIN USER dengan localStorage
+// =======================
+const user = JSON.parse(localStorage.getItem("loggedInUser")); // Ambil data user dari localStorage
+if(user){
+    document.getElementById("loginMenu").innerHTML = `<a href="#">Halo, ${user.nama}</a>`; // Ubah menu login jadi sapaan
+    document.getElementById("registerMenu").innerHTML = `<a href="#" id="logoutBtn">Logout</a>`; // Ubah menu register jadi logout
+    
+    // Tambahkan event untuk logout
+    document.getElementById("logoutBtn").addEventListener("click", function(e){
+        e.preventDefault(); // Cegah reload halaman
+        localStorage.removeItem("loggedInUser"); // Hapus data login
+        showToast("Anda telah logout!"); // Tampilkan toast saat logout
+        window.location.reload(); // Refresh halaman
+    });
+}
+
+// =======================
+// FUNGSI Keranjang Belanja
+// =======================
+let keranjang = []; // Array untuk simpan item keranjang
+const tombolTambah = document.querySelectorAll(".tambah-keranjang"); // Ambil semua tombol tambah keranjang
+
+// Tambahkan produk saat tombol diklik
+tombolTambah.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        const produkItem = btn.parentElement; // Ambil div produk
+        const namaProduk = produkItem.querySelector("h3").innerText; // Ambil nama produk
+        const hargaProduk = parseInt(produkItem.querySelector("p").innerText.replace("Rp ", "").replace(".", "")); // Ambil harga produk (angka saja)
+
+        // Cek apakah produk sudah ada di keranjang
+        const cekProduk = keranjang.find(item => item.nama === namaProduk);
+        if(cekProduk){
+            cekProduk.jumlah += 1; // Jika sudah ada, tambah jumlah
+        } else {
+            keranjang.push({nama: namaProduk, harga: hargaProduk, jumlah:1}); // Jika belum ada, tambahkan ke array
+        }
+        renderKeranjang(); // Render ulang tabel keranjang
+
+        // Tampilkan notifikasi toast
+        showToast(`${namaProduk} ditambahkan ke keranjang!`);
+    });
+});
+
+// =======================
+// Fungsi render keranjang
+// =======================
+function renderKeranjang(){
+    const daftar = document.getElementById("daftar-keranjang"); // Ambil tbody dari tabel keranjang
+    daftar.innerHTML = ""; // Kosongkan isi tabel
+    let total = 0; // Awal total belanja = 0
+
+    keranjang.forEach((item, i) => { // Loop semua item di keranjang
+        const subtotal = item.harga * item.jumlah; // Hitung subtotal per item
+        total += subtotal; // Tambahkan subtotal ke total belanja
+
+        // Tambahkan baris tabel untuk setiap item
+        daftar.innerHTML += `<tr>
+            <td>${item.nama}</td> <!-- Nama produk -->
+            <td>${item.jumlah}</td> <!-- Jumlah produk -->
+            <td>Rp ${item.harga}</td> <!-- Harga satuan -->
+            <td>Rp ${subtotal}</td> <!-- Total harga produk -->
+            <td><button onclick="hapusItem(${i})">Hapus</button></td> <!-- Tombol hapus -->
+        </tr>`;
+    });
+
+    document.getElementById("total-belanja").innerText = total; // Update total belanja
+}
+
+// =======================
+// Fungsi hapus item dari keranjang
+// =======================
+function hapusItem(index){
+    const namaProduk = keranjang[index].nama; // Ambil nama produk yang akan dihapus
+    keranjang.splice(index, 1); // Hapus item dari array berdasarkan index
+    renderKeranjang(); // Render ulang keranjang
+
+    // Tampilkan notifikasi toast
+    showToast(`${namaProduk} dihapus dari keranjang`);
+}
+
+// =======================
+// FUNGSI TOAST NOTIFIKASI
+// =======================
+function showToast(message) {
+    const toast = document.getElementById("toast"); // Ambil elemen div#toast
+    toast.innerText = message; // Isi teks notifikasi
+    toast.style.display = "block"; // Munculkan notifikasi
+
+    // Hilangkan otomatis setelah 3 detik
+    setTimeout(() => {
+        toast.style.display = "none"; 
+    }, 3000);
+}
+</script>
+<!-- CODE JAVASCRIPT -->
+
+
+</body>
+</html>

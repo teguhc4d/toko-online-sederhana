@@ -1,0 +1,183 @@
+/* ================== RESET DAN DASAR ================== */
+* {
+  margin: 0; /* Hilangkan margin default semua elemen */
+  padding: 0; /* Hilangkan padding default semua elemen */
+  box-sizing: border-box; /* Hitung lebar elemen termasuk padding & border */
+  font-family: Arial, sans-serif; /* Gunakan font Arial, fallback ke sans-serif */
+}
+
+body {
+  line-height: 1.6; /* Tinggi baris agar teks lebih mudah dibaca */
+  background: #f9f9f9; /* Warna latar belakang halaman */
+  color: #333; /* Warna teks utama */
+}
+
+/* ================== HEADER & NAV ================== */
+header {
+  background: #222; /* Warna background header (hitam keabu-abuan) */
+  color: #fff; /* Warna teks di header (putih) */
+  padding: 15px 20px; /* Ruang dalam header (atas-bawah 15px, kiri-kanan 20px) */
+  display: flex; /* Flexbox untuk layout horizontal */
+  align-items: center; /* Rata tengah secara vertikal */
+  justify-content: space-between; /* Spasi rata kiri dan kanan */
+  flex-wrap: wrap; /* Supaya elemen turun ke bawah jika layar kecil */
+}
+
+header h1 {
+  font-size: 24px; /* Ukuran font judul */
+  font-weight: bold; /* Teks tebal */
+}
+
+nav ul {
+  list-style: none; /* Hilangkan bullet/angka list */
+  display: flex; /* Gunakan flex untuk susun horizontal */
+  gap: 15px; /* Jarak antar item */
+}
+
+nav ul li a {
+  color: #fff; /* Warna link putih */
+  text-decoration: none; /* Hilangkan garis bawah */
+  padding: 6px 12px; /* Ruang dalam link */
+  border-radius: 6px; /* Sudut membulat */
+  transition: background 0.3s; /* Efek transisi saat hover */
+}
+
+nav ul li a:hover {
+  background: #444; /* Warna background abu-abu gelap saat hover */
+}
+
+header form {
+  display: flex; /* Susun form dalam 1 baris */
+  gap: 10px; /* Jarak antar input dan tombol */
+}
+
+header input[type="text"] {
+  padding: 6px 10px; /* Ruang dalam input */
+  border: none; /* Hilangkan border default */
+  border-radius: 6px; /* Sudut membulat */
+}
+
+header button {
+  padding: 6px 12px; /* Ruang dalam tombol */
+  border: none; /* Hilangkan border default */
+  border-radius: 6px; /* Sudut membulat */
+  background: #ff6b6b; /* Warna tombol merah */
+  color: #fff; /* Warna teks putih */
+  cursor: pointer; /* Pointer berubah jadi tangan saat hover */
+  transition: background 0.3s; /* Efek transisi */
+}
+
+header button:hover {
+  background: #ff4757; /* Warna tombol merah lebih gelap saat hover */
+}
+
+/* ================== BAGIAN UMUM ================== */
+.tengah {
+  text-align: center; /* Rata tengah konten */
+  margin: 50px auto; /* Margin atas bawah 50px, kiri kanan auto */
+  max-width: 1100px; /* Lebar maksimum konten */
+  padding: 0 20px; /* Padding kiri dan kanan */
+}
+
+.kolom .deskripsi {
+  font-size: 14px; /* Ukuran font kecil */
+  color: #777; /* Warna abu-abu */
+  margin-bottom: 10px; /* Jarak bawah */
+}
+
+.kolom h2 {
+  font-size: 28px; /* Ukuran font besar */
+  margin-bottom: 15px; /* Jarak bawah */
+  color: #222; /* Warna teks gelap */
+}
+
+/* ================== OWNER / TUTOR LIST ================== */
+.tutor-list {
+  display: flex; /* Flexbox untuk menyusun item */
+  flex-wrap: wrap; /* Supaya bisa pindah baris */
+  justify-content: center; /* Rata tengah horizontal */
+  gap: 20px; /* Jarak antar item */
+  margin-top: 30px; /* Jarak atas */
+}
+
+.kartu-tutor {
+  background: #fff; /* Background putih */
+  border-radius: 12px; /* Sudut membulat */
+  padding: 15px; /* Ruang dalam */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+  width: 160px; /* Lebar kartu */
+  transition: transform 0.3s; /* Animasi saat hover */
+}
+
+.kartu-tutor img {
+  width: 100%; /* Gambar isi penuh lebar kartu */
+  height: 160px; /* Tinggi tetap */
+  object-fit: cover; /* Gambar dipotong sesuai ukuran */
+  border-radius: 8px; /* Sudut gambar membulat */
+  margin-bottom: 10px; /* Jarak bawah */
+}
+
+.kartu-tutor:hover {
+  transform: translateY(-6px); /* Kartu naik sedikit saat hover */
+}
+
+/* ================== PARTNER LIST ================== */
+.partner-list {
+  display: flex; /* Flexbox */
+  flex-wrap: wrap; /* Bisa turun ke bawah */
+  justify-content: center; /* Rata tengah */
+  gap: 25px; /* Jarak antar kartu */
+  margin-top: 30px; /* Jarak atas */
+}
+
+.kartu-partner {
+  background: #fff; /* Background putih */
+  border-radius: 12px; /* Sudut membulat */
+  padding: 15px; /* Ruang dalam */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+  width: 180px; /* Lebar kartu */
+  height: 120px; /* Tinggi kartu */
+  display: flex; /* Flexbox untuk isi */
+  align-items: center; /* Rata tengah vertikal */
+  justify-content: center; /* Rata tengah horizontal */
+  transition: transform 0.3s; /* Animasi saat hover */
+}
+
+.kartu-partner img {
+  max-width: 100%; /* Batas lebar maksimal gambar */
+  max-height: 100%; /* Batas tinggi maksimal gambar */
+  object-fit: contain; /* Gambar tetap proporsional */
+}
+
+.kartu-partner:hover {
+  transform: translateY(-6px); /* Kartu naik saat hover */
+}
+
+/* ================== FOOTER ================== */
+footer {
+  text-align: center; /* Teks rata tengah */
+  background: #222; /* Warna background hitam */
+  color: #fff; /* Warna teks putih */
+  padding: 15px 0; /* Ruang dalam atas bawah */
+  margin-top: 50px; /* Jarak dari konten atas */
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column; /* Menu jadi vertikal */
+    gap: 10px; /* Jarak antar item lebih kecil */
+    margin-top: 10px; /* Tambah jarak atas */
+  }
+
+  header {
+    flex-direction: column; /* Header ditumpuk */
+    align-items: flex-start; /* Konten rata kiri */
+  }
+
+  .tutor-list,
+  .partner-list {
+    flex-direction: column; /* Kartu ditumpuk vertikal */
+    align-items: center; /* Rata tengah */
+  }
+}

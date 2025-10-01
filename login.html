@@ -1,0 +1,53 @@
+<!DOCTYPE html> <!-- Menentukan tipe dokumen sebagai HTML5 -->
+<html lang="id"> <!-- Tag utama HTML, dengan bahasa = Indonesia -->
+<head>
+  <meta charset="UTF-8"> <!-- Set karakter encoding agar mendukung huruf dan simbol -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Agar tampilan responsif di mobile -->
+  <title>Login - Toko Online</title> <!-- Judul halaman yang tampil di tab browser -->
+  <link rel="stylesheet" href="style.css"> <!-- Memanggil file CSS eksternal -->
+</head>
+<body>
+  <!-- Container utama untuk form login -->
+  <div class="form-container">
+    <h2>Login</h2> <!-- Judul form -->
+
+    <!-- Form login -->
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="Email" required> <!-- Input email, wajib diisi -->
+      <input type="password" id="password" placeholder="Password" required> <!-- Input password, wajib diisi -->
+      <button type="submit">Login</button> <!-- Tombol untuk submit form -->
+    </form>
+
+    <!-- Link ke halaman register jika belum punya akun -->
+    <p>Belum punya akun? <a href="register.html">Daftar</a></p>
+  </div>
+
+  <!-- Bagian JavaScript -->
+  <script>
+    // Menangkap event submit dari form dengan id "loginForm"
+    document.getElementById("loginForm").addEventListener("submit", function(e){
+      e.preventDefault(); // Mencegah form reload halaman
+
+      // Ambil nilai input email dan password, lalu hapus spasi di awal/akhir
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      // Ambil data akun yang sebelumnya disimpan di localStorage
+      const akun = JSON.parse(localStorage.getItem("akun"));
+
+      // Cek apakah akun ada, dan email+password cocok
+      if(akun && akun.email === email && akun.password === password){
+        // Jika cocok, simpan data user yang sedang login
+        localStorage.setItem("loggedInUser", JSON.stringify(akun));
+        // Tampilkan pesan berhasil
+        alert("Login berhasil! Selamat datang " + akun.nama);
+        // Arahkan ke halaman utama
+        window.location.href = "index.html";
+      } else {
+        // Jika salah email atau password
+        alert("Email atau password salah!");
+      }
+    });
+  </script>
+</body>
+</html>

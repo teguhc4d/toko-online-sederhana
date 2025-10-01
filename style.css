@@ -1,0 +1,211 @@
+/* Reset dasar */
+body {
+  font-family: Arial, sans-serif; /* Mengatur jenis huruf default */
+  margin: 0; /* Menghilangkan margin bawaan browser */
+  padding: 0; /* Menghilangkan padding bawaan browser */
+  background: #f9f9f9; /* Memberi warna latar belakang abu-abu muda */
+}
+
+/* Header */
+header {
+  background: #333; /* Latar belakang hitam keabu-abuan */
+  color: #fff; /* Warna teks putih */
+  padding: 10px 20px; /* Spasi dalam (atas-bawah: 10px, kanan-kiri: 20px) */
+  display: flex; /* Mengatur layout menjadi fleksibel */
+  justify-content: space-between; /* Jarak elemen rata kiri & kanan */
+  align-items: center; /* Menyusun elemen agar sejajar di tengah vertikal */
+  flex-wrap: wrap; /* Jika layar kecil, elemen otomatis turun ke bawah */
+}
+
+header h1 {
+  margin: 0; /* Menghilangkan margin bawaan judul */
+}
+
+nav ul {
+  list-style: none; /* Menghilangkan bullet list */
+  margin: 0; /* Hilangkan margin */
+  padding: 0; /* Hilangkan padding */
+  display: flex; /* Menyusun menu horizontal */
+  flex-wrap: wrap; /* Menu bisa pindah baris kalau layar kecil */
+}
+
+nav ul li {
+  margin: 0 10px; /* Memberi jarak kiri-kanan antar menu */
+}
+
+nav ul li a {
+  color: white; /* Warna teks putih */
+  text-decoration: none; /* Menghilangkan garis bawah link */
+}
+
+form input,
+form button {
+  padding: 5px; /* Memberi spasi dalam pada input dan tombol */
+}
+
+/* Banner */
+#banner {
+  background: #eee; /* Warna latar belakang abu muda */
+  padding: 40px; /* Spasi dalam seragam */
+  text-align: center; /* Semua teks rata tengah */
+}
+
+/* Produk */
+#produk {
+  display: grid; /* Menggunakan grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+  /* Membuat kolom otomatis dengan lebar min 200px */
+  gap: 20px; /* Jarak antar kolom & baris */
+  padding: 20px; /* Spasi dalam area produk */
+}
+
+.produk-item {
+  background: #fff; /* Latar belakang putih */
+  padding: 15px; /* Spasi dalam */
+  border: 1px solid #ddd; /* Border tipis abu muda */
+  border-radius: 8px; /* Sudut agak membulat */
+  text-align: center; /* Konten rata tengah */
+  transition: transform 0.2s; /* Efek animasi saat hover */
+}
+
+.produk-item:hover {
+  transform: scale(1.05); /* Membesar sedikit saat kursor diarahkan */
+}
+
+.produk-item img {
+  max-width: 100%; /* Gambar tidak lebih lebar dari kontainer */
+  border-radius: 4px; /* Membulatkan sedikit sudut gambar */
+}
+
+.produk-item button {
+  margin-top: 10px; /* Jarak atas tombol */
+  padding: 8px 12px; /* Spasi dalam tombol */
+  border: none; /* Menghilangkan border */
+  background: #333; /* Warna latar tombol hitam abu */
+  color: white; /* Teks tombol putih */
+  cursor: pointer; /* Pointer berubah jadi tangan saat hover */
+  border-radius: 4px; /* Membuat tombol membulat */
+}
+
+.produk-item button:hover {
+  background: #555; /* Tombol lebih terang saat hover */
+}
+
+/* Keranjang */
+#keranjang {
+  padding: 20px; /* Spasi dalam area keranjang */
+}
+
+#keranjang table {
+  width: 100%; /* Lebar tabel penuh */
+  border-collapse: collapse; /* Menghilangkan jarak antar border */
+  margin-bottom: 10px; /* Jarak bawah tabel */
+}
+
+#keranjang th,
+#keranjang td {
+  border: 1px solid #ddd; /* Border tipis abu */
+  padding: 8px; /* Spasi dalam sel */
+  text-align: center; /* Teks rata tengah */
+}
+
+#keranjang th {
+  background: #f2f2f2; /* Warna latar abu muda untuk header tabel */
+}
+
+/* Checkout */
+#checkout {
+  padding: 20px; /* Spasi dalam checkout */
+}
+
+#checkout form input,
+#checkout form button {
+  display: block; /* Elemen tampil satu per baris */
+  width: 100%; /* Lebar penuh */
+  margin: 10px 0; /* Jarak atas-bawah */
+  padding: 10px; /* Spasi dalam */
+  box-sizing: border-box; /* Biar padding/border masuk hitungan width */
+  font-size: 16px;       /* Biar teks konsisten */
+}
+
+#checkout form button {
+  background: #333; /* Warna tombol hitam abu */
+  color: white; /* Teks tombol putih */
+  border: none; /* Tanpa border */
+  cursor: pointer; /* Kursor jadi tangan */
+}
+
+#checkout form button:hover {
+  background: #555; /* Warna tombol jadi abu terang saat hover */
+}
+
+/* Kontak */
+#kontak {
+  padding: 20px; /* Spasi dalam */
+  background: #f2f2f2; /* Latar abu muda */
+  margin-left: 10px;  /* Jarak kiri */
+}
+
+/* Footer */
+footer {
+  text-align: center; /* Teks rata tengah */
+  padding: 15px; /* Spasi dalam */
+  background: #333; /* Latar belakang hitam abu */
+  color: white; /* Teks putih */
+}
+
+/* Notifikasi (Toast) */
+#toast {
+  position: fixed; /* Posisi tetap di layar */
+  bottom: 20px; /* Jarak dari bawah 20px */
+  right: 20px; /* Jarak dari kanan 20px */
+  background: yellow; /* Latar belakang hitam abu */
+  color: black; /* Teks putih */
+  font-weight: bold;
+  padding: 10px 20px; /* Spasi dalam */
+  border-radius: 4px; /* Sudut sedikit membulat */
+  display: none; /* Tidak ditampilkan secara default */
+}
+
+/* Form Login & Register */
+.form-container {
+  max-width: 400px; /* Lebar maksimal 400px */
+  margin: 50px auto; /* Tengah secara horizontal dengan margin atas-bawah 50px */
+  background: #fff; /* Latar belakang putih */
+  padding: 20px; /* Spasi dalam */
+  border: 1px solid #ccc; /* Border tipis abu */
+  border-radius: 8px; /* Sudut agak membulat */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+}
+
+.form-container h2 {
+  text-align: center; /* Judul rata tengah */
+  margin-bottom: 20px; /* Jarak bawah judul */
+}
+
+.form-container input {
+  width: 100%; /* Lebar penuh */
+  padding: 10px; /* Spasi dalam */
+  margin: 10px 0; /* Jarak atas-bawah */
+  border: 1px solid #ccc; /* Border abu */
+  border-radius: 4px; /* Membulat sedikit */
+}
+
+.form-container button {
+  width: 100%; /* Lebar penuh */
+  padding: 10px; /* Spasi dalam */
+  background: #333; /* Latar tombol hitam abu */
+  color: white; /* Teks putih */
+  border: none; /* Tanpa border */
+  cursor: pointer; /* Pointer berubah jadi tangan */
+  border-radius: 4px; /* Membulat */
+}
+
+.form-container button:hover {
+  background: #555; /* Tombol lebih terang saat hover */
+}
+
+.form-container p {
+  text-align: center; /* Teks rata tengah */
+  margin-top: 15px; /* Jarak atas */
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html> <!-- Deklarasi tipe dokumen, memberi tahu browser ini adalah HTML5 -->
+<html lang="en"> <!-- Tag pembuka HTML, dengan atribut bahasa "en" (Inggris) -->
+<head> <!-- Bagian head, berisi metadata dan link resource -->
+    <meta charset="UTF-8" /> <!-- Mengatur encoding karakter ke UTF-8 (standar internasional) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Supaya tampilan responsif di HP/laptop -->
+    <title>Tentang Kami</title> <!-- Judul halaman yang tampil di tab browser -->
+    <link rel="stylesheet" href="tentang.css" /> <!-- Menghubungkan file CSS eksternal -->
+</head>
+<body> <!-- Bagian body, semua konten yang ditampilkan di halaman -->
+
+    <!-- HEADER DAN NAVIGASI -->
+    <header> <!-- Bagian header, biasanya untuk logo dan menu navigasi -->
+        <h1>Rpl Store</h1> <!-- Judul/logo website -->
+        <nav> <!-- Tag navigasi -->
+            <ul id="menu"> <!-- List menu navigasi -->
+                <li id="indexMenu"><a href="index.html">Beranda</a></li> <!-- Menu Beranda -->
+                <li id="indexMenu"><a href="index.html">Produk</a></li> <!-- Menu Produk -->
+                <li id="indexMenu"><a href="index.html">Keranjang</a></li> <!-- Menu Keranjang -->
+                <li id="indexMenu"><a href="index.html">Checkout</a></li> <!-- Menu Checkout -->
+                <li id="indexMenu"><a href="index.html">Kontak</a></li> <!-- Menu Kontak -->
+                <li id="tentangMenu"><a href="tentang.html">Tentang Kami</a></li> <!-- Menu Tentang Kami -->
+                <li id="loginMenu"><a href="login.html">Login</a></li> <!-- Menu Login -->
+                <li id="registerMenu"><a href="register.html">Register</a></li> <!-- Menu Register -->
+            </ul>
+        </nav>
+
+        <form> <!-- Form pencarian -->
+            <input type="text" placeholder="Cari Produk...." /> <!-- Kolom input untuk pencarian -->
+            <button type="submit">Cari</button> <!-- Tombol submit untuk mencari -->
+        </form>
+    </header>
+    <!-- HEADER DAN NAVIGASI -->
+
+    <!-- ================== SECTION TENTANG ================== -->
+    <section id="tentang"> <!-- Bagian "Tentang Kami" -->
+        <div class="tengah"> <!-- Kontainer tengah -->
+            <div class="kolom"> <!-- Kolom teks -->
+                <p class="deskripsi">Owner</p> <!-- Paragraf deskripsi kecil -->
+                <h2>Owner</h2> <!-- Judul besar -->
+                <p>
+                    Owner adalah pemilik bisnis yang memastikan usaha berjalan lancar
+                    dan berkembang.
+                </p> <!-- Penjelasan tentang owner -->
+            </div>
+
+            <div class="tutor-list"> <!-- Daftar owner/tutor -->
+                <div class="kartu-tutor"> <!-- Kartu profil -->
+                    <img src="image/Nova.jpeg" /> <!-- Foto Nova -->
+                    <p>Nova</p> <!-- Nama Nova -->
+                </div>
+                <div class="kartu-tutor">
+                    <img src="image/Siti.jpeg" /> <!-- Foto Siti -->
+                    <p>Siti</p>
+                </div>
+                <div class="kartu-tutor">
+                    <img src="image/Panji.jpeg" /> <!-- Foto Panji -->
+                    <p>Panji</p>
+                </div>
+                <div class="kartu-tutor">
+                    <img src="image/Elsa.jpeg" /> <!-- Foto Elsa -->
+                    <p>Elsa</p>
+                </div>
+                <div class="kartu-tutor">
+                    <img src="image/Niha.jpeg" /> <!-- Foto Niha -->
+                    <p>Niha</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================== SECTION PARTNERS ================== -->
+    <section id="partners"> <!-- Bagian partners -->
+        <div class="tengah">
+            <div class="kolom"> <!-- Kolom teks -->
+                <p class="deskripsi">Our Top Partners</p> <!-- Deskripsi kecil -->
+                <h2>Partners</h2> <!-- Judul -->
+                <p>
+                    Fashion Store bekerja sama dengan marketplace besar seperti
+                    Tokopedia, Shopee, Lazada, Blibli, dan Bukalapak.
+                </p> <!-- Paragraf deskripsi partners -->
+            </div>
+
+            <div class="partner-list"> <!-- Daftar logo partner -->
+                <div class="kartu-partner">
+                    <img
+                      src="https://www.pngitem.com/pimgs/m/625-6256609_tokopedia-hd-png-download.png" /> <!-- Logo Tokopedia -->
+                </div>
+                <div class="kartu-partner">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Shopee-logo.jpg" /> <!-- Logo Shopee -->
+                </div>
+                <div class="kartu-partner">
+                    <img
+                      src="https://miro.medium.com/v2/resize:fit:500/1*UXVt_sGuPxGoiPvDREkbVw.jpeg" /> <!-- Logo Lazada -->
+                </div>
+                <div class="kartu-partner">
+                    <img
+                      src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/mlogo/BLP-60077-2c12b0fa-6793-48af-9630-1bb6b6b6df39.png" /> <!-- Logo Blibli -->
+                </div>
+                <div class="kartu-partner">
+                    <img
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXwpjC5lFaQ16upxtletk3kijGyJLvgL2SMQ&s" /> <!-- Logo Bukalapak -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer> <!-- Bagian footer -->
+      <p>&copy; 2025 Rpl Sekoci. All Rights Reserved.</p> <!-- Hak cipta -->
+    </footer>
+    <!-- Footer -->
+
+</body>
+</html> <!-- Penutup HTML -->
